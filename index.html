@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link rel="apple-touch-icon" href="images/tshirt_form.png">
+    <title>Gaurang Form</title>
+
+    <!-- Meta Tags required for Progressive Web App -->
+    <meta name= "apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="black">
+
+    <!-- Manifest File link -->
+    <link rel="manifest" href="manifest.json">
+
+        <div class="nav-bg">
+            <div class="nav">
+              <div class="topnav">
+                <a href="#home">Home</a>
+                <a href="#address">Adddress</a>
+                <a href="/contact.html">Contact</a>
+                <a href="#payment">Payment</a>
+              </div>
+            </div>
+
+        <h1 class="head"><center>T-Shirt Form</center></h1>
+    </div>
+   
+
+</head>
+
+<body class="body">
+    <script>
+        window.addEventListener('load', () => {
+        registerSW();
+        });
+    
+        // Register the Service Worker
+        async function registerSW() {
+            if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+            console.log('Registration successful, scope is:', registration.scope);
+            }).catch(function(error) {
+            console.log('Service worker registration failed, error:', error);
+                });
+            }
+            }
+    </script>
+    
+<center>
+    
+<form>
+    
+<fieldset class="first">
+
+    <legend><h2 class="legend">Enter Details</h2></legend>
+    <div>
+        <label><h3>Name:</h3></label>
+        <input type="text" placeholder="Gaurang" required></input>
+    </div>
+    
+
+    <div>
+        <label><h3>Tagline:</h3></label>
+        <input type="text" placeholder="Hey there!" required></input>
+    </div>
+
+    <div>
+        <label><h3>Color:</h3></label>
+        <select type="dropdown">
+        <option>Red</option>
+        <option>Blue</option>
+        <option>Green</option>
+        <option>Yellow</option>
+        <option>Orange</option>
+        </select>
+    </div>
+
+    <div>
+        <label><h3>Size:</h3></label>
+        <select type="dropdown">
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        </select>
+    </div>
+
+    <div>
+        <h3>Quantity:</h3> 
+        <input type="number" placeholder="Number" required></input>
+    </div>
+</fieldset>
+
+    <br>
+
+<fieldset class="first">
+    <legend><h2 class="legend">Address</h2></legend>
+    
+        <label><h3>Flat Number, Building:</h3></label>
+        <input type="text" placeholder="101, Flora" required></input>
+      
+        <label><h3>Street, Landmark:</h3></label>
+        <input type="text" placeholder="MG Road, Fountain" required></input>
+
+        <label><h3>City:</h3></label>
+        <input type="text" placeholder="Thane" required></input>
+
+        <label><h3>State, Country:</h3></label>
+        <input type="text" placeholder="Maharashtra, India" required></input>
+
+        <label><h3>Zip Code:</h3></label>
+        <input type="Number" placeholder="123456" required></input>
+</fieldset>
+
+    <br>
+
+<fieldset class="first">
+    <legend><h2 class="legend">Contact Info</h2></legend>
+
+    <label><h3>Contact No.:</h3></label>
+    <input type="number" placeholder="1234567890" required></input>
+    
+    <label><h3>Email ID:</h3></label>
+    <input type="email" placeholder="abcd@ves.ac.in" required></input>
+
+</fieldset>
+
+    <br>
+
+<fieldset class="first">
+    <legend><h2 class="legend">Payment</h2></legend>
+   
+    <div>
+        <h3>Total Amount:</h3><p> Rs. 399 /-</p>
+    </div>
+
+    <div>
+        <h3>Payment Method:</h3>
+         <input type="radio">Gpay</input><br>
+         <input type="radio">Netbanking</input><br>
+         <input type="radio">Amazon Pay</input><br>
+    </div>
+</fieldset>
+    
+    <br>
+
+<fieldset>
+    <div>
+        <input type="submit" class="button">
+        <input type="reset" class="button">
+    </div>
+</fieldset>
+
+</form>
+
+</center>
+
+</body>
+</html>

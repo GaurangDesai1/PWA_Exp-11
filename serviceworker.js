@@ -15,6 +15,20 @@ self.addEventListener('push', function (event) { if (event && event.data) {
     event.waitUntil(self.showNotiﬁcation("Gaurang Mini Project", {body: data.message}))}
     }
 })
+
+   self.addEventListener('fetch', function(event) {
+   event.respondWith(async function() {
+      try{
+        var res = await fetch(event.request);
+        var cache = await caches.open('cache');
+        cache.put(event.request.url, res.clone());
+        return res;
+      }
+      catch(error){
+        return caches.match(event.request);
+       }
+     }());
+ });
     
 
 var checkResponse = function (request) { return new Promise(function (fulfill, reject) {
